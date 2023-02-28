@@ -1,3 +1,5 @@
+using System.Collections;
+
 namespace Library
 {
     class Words
@@ -13,9 +15,17 @@ namespace Library
         public static string RandomWord() {
             Random rdn = new Random(); 
             int num = rdn.Next(LengthOfArr(wordsArr));
-            Console.WriteLine(num);
+            Console.WriteLine(wordsArr[num]);
             return wordsArr[num];
 
+        }
+
+        public static void BlankWord(string word) {
+            char[] wordArr = word.ToArray();
+            foreach (char i in wordArr)
+            {
+                Console.Write("_ ");
+            }
         }
     }
 }
