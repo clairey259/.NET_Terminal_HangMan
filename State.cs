@@ -7,7 +7,6 @@ namespace Functionality
         public int lives;
         List<string> guesses;
 
-
         //constructor
         public State(string newWord, int amountOfLives)
         {
@@ -15,7 +14,6 @@ namespace Functionality
             guesses = new List<string>();
             lives = amountOfLives;
         }
-
 
         //methods
         public void AddGuess(string guess)
