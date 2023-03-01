@@ -11,7 +11,7 @@ namespace Game
 
         public void ShowLives() 
         {
-            Console.WriteLine($"Current Lives: {numberOfLives}");
+            Console.WriteLine($"Current Lives: {numberOfLives}\n");
         }
     }
     
