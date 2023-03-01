@@ -45,7 +45,11 @@ namespace Functionality
 
         public void UpdateLives(string i)
         {
-            if (word.Contains(i))
+            if (guesses.Contains(i))
+            {
+                Console.WriteLine($"You've already guessed {i}");
+            }
+            else if (word.Contains(i))
             {
                 Console.WriteLine($"Correct\n\n");
             }

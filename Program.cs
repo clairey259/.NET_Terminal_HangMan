@@ -23,13 +23,14 @@ namespace Program
                 //guess a letter and update lives
                 Console.Write("Guess a Letter: ");
                 string currentGuess = Console.ReadLine();
-                currentState.AddGuess(currentGuess);
                 currentState.UpdateLives(currentGuess);
+                currentState.AddGuess(currentGuess);
+                
             }
 
             if (currentState.IsGameWon())
             {
-                Console.WriteLine($"\n\n" + $"Congratulations you have WON with {currentState.lives} remaining" + "\n" + ":)");
+                Console.WriteLine($"\n\n" + $"Congratulations you have WON with {currentState.lives} lives remaining" + "\n" + ":)");
             }
             else
             {
