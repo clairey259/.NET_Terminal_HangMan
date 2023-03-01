@@ -1,5 +1,3 @@
-using Library;
-using System.Collections;
 
 namespace Functionality
 {
@@ -8,8 +6,6 @@ namespace Functionality
         string word;
         public int lives;
         List<string> guesses;
-        List<string> incorrectGuesses;
-        public List<string> correctGuesses;
 
 
         //constructor
@@ -17,9 +13,7 @@ namespace Functionality
         {
             word = newWord;
             guesses = new List<string>();
-            incorrectGuesses = new List<string>();
             lives = amountOfLives;
-            correctGuesses = new List<string>();
         }
 
 
@@ -27,11 +21,6 @@ namespace Functionality
         public void AddGuess(string guess)
         {
             guesses.Add(guess);
-            if (word.Contains(guess) == false)
-            {
-                incorrectGuesses.Add(guess);
-            }
-            else correctGuesses.Add(guess);
         }
 
         public void DisplayWord(string word)
@@ -63,8 +52,35 @@ namespace Functionality
             else
             {
                 Console.WriteLine("Incorrect" + $"\n\n");
-                lives --;
+                lives--;
             }
+        }
+
+        public bool IsGameWon() {
+            foreach (char w in word.ToArray()) 
+            {
+                if (!guesses.Contains(w.ToString()))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        public bool IsGameLost()
+        {
+            return lives <= 0;
+        }
+
+        private bool IsGameFinished()
+        {
+            return IsGameLost() || IsGameWon();
+        }
+
+        public bool IsGameRunning()
+        {
+            return !IsGameFinished();
         }
     }
 }

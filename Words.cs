@@ -20,34 +20,5 @@ namespace Library
             return wordsArr[num];
 
         }
-
-        public static void BlankWord(string word)
-        {
-            char[] wordArr = word.ToArray();
-            foreach (char i in wordArr)
-            {
-                Console.Write("_ ");
-            }
-        }
-
-        public static bool ItMatches(char x, char[] word)
-        {
-            IEnumerable wordArr = word.ToArray();
-            foreach (char i in wordArr)
-            {
-                if (i == x)
-                {
-                    Console.WriteLine("Correct!");
-                    return true;
-                } 
-                else
-                {
-                    Console.WriteLine("Incorrect!");
-                    return false;
-                }
-            
-            }
-            return false;        
-            }
     }
 }
