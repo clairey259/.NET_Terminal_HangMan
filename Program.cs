@@ -1,5 +1,6 @@
 ﻿using Functionality;
 using Library;
+using Spectre.Console;
 
 namespace Program
 {
@@ -7,8 +8,7 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine($"\n\n" + "Lets Play HangMan" + $"\n\n");
-            
+            AnsiConsole.Markup($"[bold darkblue]\n\n" + "Lets Play HangMan" + $"\n\n[/]");
             //generate random word and create instance State
             string currentWord = Words.RandomWord();
             State currentState = new State(currentWord, 5);
@@ -28,12 +28,14 @@ namespace Program
 
             if (currentState.IsGameWon())
             {
-                Console.WriteLine($"\n\n" + $"Congratulations you have WON with {currentState.lives} lives remaining" + "\n" + ":)");
+                AnsiConsole.Markup($"[bold darkturquoise]\n\n" + $"Congratulations you have WON with {currentState.lives} lives remaining" + "\n" + ":)[/]"+ $"\n\n\n");
             }
             else
             {
-                Console.WriteLine($"Sorry you have LOST" + $"\n" +":(");
+                AnsiConsole.Markup($"[bold darkgreen]Sorry you have LOST" + $"\n" +":([/]"+ $"\n\n\n");
             }
+            Console.Write("Press ENTER to exit");
+            Console.ReadLine();
         }
     }
 }

@@ -1,4 +1,6 @@
 
+using Spectre.Console;
+
 namespace Functionality
 {
     class State
@@ -45,15 +47,15 @@ namespace Functionality
         {
             if (guesses.Contains(i))
             {
-                Console.WriteLine($"You've already guessed {i}");
+                AnsiConsole.Markup($"[red]You've already guessed {i}[/]");
             }
             else if (word.Contains(i))
             {
-                Console.WriteLine($"Correct\n\n");
+                AnsiConsole.Markup($"[darkturquoise]Correct\n\n[/]");
             }
             else
             {
-                Console.WriteLine("Incorrect" + $"\n\n");
+                AnsiConsole.Markup("[darkgreen]Incorrect" + $"\n\n[/]");
                 lives--;
             }
         }
