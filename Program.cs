@@ -10,7 +10,7 @@ namespace Program
         {
             AnsiConsole.Markup($"[bold darkblue]\n\n" + "Lets Play HangMan" + $"\n\n[/]");
             //generate random word and create instance State
-            string currentWord = Words.RandomWord();
+            var currentWord = Words.RetrieveWordAsync().Result;
             State currentState = new State(currentWord, 5);
             
             while (currentState.IsGameRunning())
