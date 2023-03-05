@@ -47,7 +47,7 @@ namespace Functionality
         {
             if (guesses.Contains(i))
             {
-                AnsiConsole.Markup($"[red]You've already guessed {i}[/]");
+                AnsiConsole.Markup($"[red]You've already guessed {i}\n[/]");
             }
             else if (word.Contains(i))
             {
